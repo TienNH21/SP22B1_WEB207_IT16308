@@ -7,35 +7,6 @@
     <title>Document</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <style>
-        body {
-            padding: 0px;
-            background-color: lightyellow;
-            margin: 0px auto;
-        }
-
-        header {
-            height: 100px;
-            background-color: red;
-        }
-
-        nav {
-            line-height: 30px;
-            background-color: yellow;
-        }
-
-        .container > div > * {
-            min-height: 300px;
-            background-color: paleturquoise;
-        }
-        .container > div > article {
-            background-color: cyan;
-        }
-        footer {
-            height: 50px;
-            background-color: gray;
-        }
-    </style>
 </head>
 <body>
     <!-- <div class="col-12 row" style="height: 200px;">
@@ -45,71 +16,115 @@
     </div> -->
 
     <div class="container">
-        <header class="row"></header>
-        <nav class="navbar navbar-expand-lg m-0">
-            Navbar
-            <!-- <a class="navbar-brand" href="#">Trang chủ</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
+        <header class="row bg-danger" style="height: 200px;"></header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">IT16308</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Giới thiệu</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Liên hệ</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Tài khoản
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
+                      <li><a class="dropdown-item" href="#">Đăng ký</a></li>
+                      <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li>
+                    </ul>
+                  </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div> -->
+              </div>
+            </div>
         </nav>
-        <div class="row col-sm-12">
-            <aside class="col-sm-3">
-                <!-- <div class="card">
-                    <div class="card-header">Sidebar Header</div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <li class="list-group-item">Nokia</li>
-                            <li class="list-group-item">Samsung</li>
-                            <li class="list-group-item">Apple</li>
-                        </ul>
-                    </div>
-                    <div class="card-footer">Sidebar footer</div>
-                </div> -->
+        <div class="row col-sm-12 mt-3">
+            <aside class="col-sm-3 bg-info p-3">
+                <div>
+                    <!-- Kết hợp .list-group + .card https://getbootstrap.com/docs/5.1/components/card/#list-groups -->
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="https://www.nokia.com/">Nokia</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="https://www.nokia.com/">Samsung</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="https://www.nokia.com/">Apple</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="https://www.nokia.com/">Oppo</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="https://www.nokia.com/">BPhone</a>
+                        </li>
+                    </ul>
+                </div>
             </aside>
-            <article class="col-sm-6">
-                This is content
+            <article class="col-sm-9 bg-primary">
+                <div class="container p-3">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-header">Nokia</div>
+                                <img src="https://uqoojcos5nobj.vcdn.cloud/uploads/2021/11/nokia-black-300x300.jpg"
+                                    class="card-img-top" alt="Ảnh sản phẩm">
+                                <div class="card-body">
+                                  <h5 class="card-title">Nokia 105 DS</h5>
+                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary">Xem chi tiết</a>
+                                </div>
+                                <div class="card-footer">200,000 VNĐ</div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-header">Nokia</div>
+                                <img src="https://uqoojcos5nobj.vcdn.cloud/uploads/2021/11/nokia-black-300x300.jpg"
+                                    class="card-img-top" alt="Ảnh sản phẩm">
+                                <div class="card-body">
+                                  <h5 class="card-title">Nokia 105 DS</h5>
+                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary">Xem chi tiết</a>
+                                </div>
+                                <div class="card-footer">200,000 VNĐ</div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-header">Nokia</div>
+                                <img src="https://uqoojcos5nobj.vcdn.cloud/uploads/2021/11/nokia-black-300x300.jpg"
+                                    class="card-img-top" alt="Ảnh sản phẩm">
+                                <div class="card-body">
+                                  <h5 class="card-title">Nokia 105 DS</h5>
+                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary">Xem chi tiết</a>
+                                </div>
+                                <div class="card-footer">200,000 VNĐ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </article>
-            <aside class="col-sm-3">
-                <!-- <div class="card">
-                    <img class="card-img-top" alt="Card image cap"
-                      src="https://i.ytimg.com/vi/ng3vo1RmeyQ/maxresdefault.jpg">
-                    <div class="card-body">
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div> -->
-            </aside>
         </div>
-        <footer class="row">Footer</footer>
+        <div class="row bg-secondary text-center p-2 mt-3">
+            <!--
+                padding-top -> pt-
+                padding-left -> pl-
+                padding-right -> pr-
+            -->
+            <span>TienNH21</span>
+        </div>
     </div>
 
     <!-- JavaScript Bundle with Popper -->
