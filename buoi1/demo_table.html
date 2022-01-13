@@ -68,6 +68,109 @@
             <article class="col-sm-9 p-0">
                 <div class="container">
                     <div class="row">
+                        <button class="col-2 btn btn-success"
+                            data-bs-toggle="modal" data-bs-target="#modal_create">
+                            Thêm mới
+                        </button>
+
+                        <!-- Modal Create -->
+                        <div class="modal fade" id="modal_create" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <form action="" method="">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">
+                                                Thêm mới sinh viên
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="mt-3 row">
+                                                <label for="fullname" class="col-2">
+                                                    Họ tên<span class="text-danger">*</span>
+                                                </label>
+                                                <div class="col-10">
+                                                    <input type="text" class="form-control" name="fullname" id="fullname" />
+                                                    <small class="text-danger">Không được để trống</small>
+                                                </div>
+                                            </div>
+                                            <div class="mt-3 row">
+                                                <label for="number" class="col-2">
+                                                    SĐT<span class="text-danger">*</span>
+                                                </label>
+                                                <div class="col-10">
+                                                    <input type="text" class="form-control" name="number" id="number" />
+                                                </div>
+                                            </div>
+                                            <div class="mt-3 row">
+                                                <label for="email" class="col-2">
+                                                    Email<span class="text-danger">*</span>
+                                                </label>
+                                                <div class="col-10">
+                                                    <input type="email" class="form-control" name="email" id="email" />
+                                                </div>
+                                            </div>
+                                            <div class="mt-3 row">
+                                                <label for="password" class="col-2">
+                                                    Mật khẩu<span class="text-danger">*</span>
+                                                </label>
+                                                <div class="col-10">
+                                                    <input type="password" class="form-control" name="password" id="password" />
+                                                </div>
+                                            </div>
+                                            <div class="mt-3 row">
+                                                <label for="avatar" class="col-2">
+                                                    Ảnh đại diện
+                                                </label>
+                                                <div class="col-10">
+                                                    <input type="file" class="form-control" name="avatar" id="avatar" />
+                                                </div>
+                                            </div>
+                                            <div class="mt-3 row">
+                                                <label for="gioi_tinh_nam" class="col-2">
+                                                    Giới tính
+                                                </label>
+                                                <div class="col-10 row">
+                                                    <div class="col-2">
+                                                        <input type="radio" class="form-check-input"
+                                                            name="gioi_tinh" id="gioi_tinh_nam" checked />
+                                                        <label class="form-check-label" for="gioi_tinh_nam">Nam</label>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="radio" class="form-check-input"
+                                                            name="gioi_tinh" id="gioi_tinh_nu" />
+                                                        <label class="form-check-label" for="gioi_tinh_nu">Nữ</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-3 row">
+                                                <label for="" class="col-2">
+                                                    Chuyên ngành
+                                                </label>
+                                                <div class="col-10">
+                                                    <select class="form-select" name="chuyen_nganh" id="chuyen_nganh">
+                                                        <option selected disabled>Chọn chuyên ngành</option>
+                                                        <option value="udpm">Ứng dụng phần mềm</option>
+                                                        <option value="tktw">Thiết kế trang web</option>
+                                                        <option value="ltmt">Lập trình máy tính</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                Đóng
+                                            </button>
+                                            <button type="button" class="btn btn-primary">Thêm mới</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- End Modal Create -->
+                    </div>
+                    <div class="row">
                         <div class="table-responsive p-0">
                             <table class="table table-striped text-nowrap">
                                 <thead class="table-primary">
@@ -87,8 +190,8 @@
                                         <td>0912312312</td>
                                         <td>ng_van_a@gmail.com</td>
                                         <td>1 Trinh Van Bo, Nam Tu Liem, Ha Noi</td>
-                                        <td><button>Sửa</button></td>
-                                        <td><button>Xóa</button></td>
+                                        <td><button class="btn btn-primary">Sửa</button></td>
+                                        <td><button class="btn btn-danger">Xóa</button></td>
                                     </tr>
                                     <tr>
                                         <td>1</td>
