@@ -10,7 +10,31 @@
 </head>
 <body>
     <div class="container">
-        <header class="row bg-danger" style="height: 200px;"></header>
+        <header class="row">
+            <div id="carouselExampleControls" class="carousel slide p-0" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img (23).webp" class="d-block w-100">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img (22).webp" class="d-block w-100">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img (15).webp" class="d-block w-100">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button"
+                    data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button"
+                    data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </header>
         <nav class="row navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">IT16308</a>
@@ -48,7 +72,14 @@
                     <!-- Kết hợp .list-group + .card https://getbootstrap.com/docs/5.1/components/card/#list-groups -->
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <a href="https://www.nokia.com/">Nokia</a>
+                            <a href="https://www.nokia.com/">
+                                Nokia
+                                <span
+                                    data-bs-toggle="tooltip"
+                                    data-bs-placement="top"
+                                    title="Giảm 99%"
+                                    class="badge bg-danger">Khuyến mãi</span>
+                            </a>
                         </li>
                         <li class="list-group-item">
                             <a href="https://www.nokia.com/">Samsung</a>
@@ -68,110 +99,120 @@
             <article class="col-sm-9 p-0">
                 <div class="container">
                     <div class="row">
-                        <button class="col-2 btn btn-success"
-                            data-bs-toggle="modal" data-bs-target="#modal_create">
-                            Thêm mới
-                        </button>
+                        <div class="col-6">
+                            <button class="col-4 btn btn-success"
+                                data-bs-toggle="modal" data-bs-target="#modal_create">
+                                Thêm mới
+                            </button>
 
-                        <!-- Modal Create -->
-                        <div class="modal fade" id="modal_create" tabindex="-1" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <form action="" method="">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">
-                                                Thêm mới sinh viên
-                                            </h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="mt-3 row">
-                                                <label for="fullname" class="col-2">
-                                                    Họ tên<span class="text-danger">*</span>
-                                                </label>
-                                                <div class="col-10">
-                                                    <input type="text" class="form-control" name="fullname" id="fullname" />
-                                                    <small class="text-danger">Không được để trống</small>
-                                                </div>
+                            <!-- Modal Create -->
+                            <div class="modal fade" id="modal_create" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <form action="" method="">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                    Thêm mới sinh viên
+                                                </h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
-                                            <div class="mt-3 row">
-                                                <label for="number" class="col-2">
-                                                    SĐT<span class="text-danger">*</span>
-                                                </label>
-                                                <div class="col-10">
-                                                    <input type="text" class="form-control" name="number" id="number" />
+                                            <div class="modal-body">
+                                                <div class="alert alert-success">
+                                                    Thêm mới thành công
                                                 </div>
-                                            </div>
-                                            <div class="mt-3 row">
-                                                <label for="email" class="col-2">
-                                                    Email<span class="text-danger">*</span>
-                                                </label>
-                                                <div class="col-10">
-                                                    <input type="email" class="form-control" name="email" id="email" />
-                                                </div>
-                                            </div>
-                                            <div class="mt-3 row">
-                                                <label for="password" class="col-2">
-                                                    Mật khẩu<span class="text-danger">*</span>
-                                                </label>
-                                                <div class="col-10">
-                                                    <input type="password" class="form-control" name="password" id="password" />
-                                                </div>
-                                            </div>
-                                            <div class="mt-3 row">
-                                                <label for="avatar" class="col-2">
-                                                    Ảnh đại diện
-                                                </label>
-                                                <div class="col-10">
-                                                    <input type="file" class="form-control" name="avatar" id="avatar" />
-                                                </div>
-                                            </div>
-                                            <div class="mt-3 row">
-                                                <label for="gioi_tinh_nam" class="col-2">
-                                                    Giới tính
-                                                </label>
-                                                <div class="col-10 row">
-                                                    <div class="col-2">
-                                                        <input type="radio" class="form-check-input"
-                                                            name="gioi_tinh" id="gioi_tinh_nam" checked />
-                                                        <label class="form-check-label" for="gioi_tinh_nam">Nam</label>
-                                                    </div>
-                                                    <div class="col-2">
-                                                        <input type="radio" class="form-check-input"
-                                                            name="gioi_tinh" id="gioi_tinh_nu" />
-                                                        <label class="form-check-label" for="gioi_tinh_nu">Nữ</label>
+                                                <div class="mt-3 row">
+                                                    <label for="fullname" class="col-2">
+                                                        Họ tên<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-10">
+                                                        <input type="text" class="form-control" name="fullname" id="fullname" />
+                                                        <small class="text-danger">Không được để trống</small>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="mt-3 row">
-                                                <label for="" class="col-2">
-                                                    Chuyên ngành
-                                                </label>
-                                                <div class="col-10">
-                                                    <select class="form-select" name="chuyen_nganh" id="chuyen_nganh">
-                                                        <option selected disabled>Chọn chuyên ngành</option>
-                                                        <option value="udpm">Ứng dụng phần mềm</option>
-                                                        <option value="tktw">Thiết kế trang web</option>
-                                                        <option value="ltmt">Lập trình máy tính</option>
-                                                    </select>
+                                                <div class="mt-3 row">
+                                                    <label for="number" class="col-2">
+                                                        SĐT<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-10">
+                                                        <input type="text" class="form-control" name="number" id="number" />
+                                                    </div>
                                                 </div>
-                                            </div>
+                                                <div class="mt-3 row">
+                                                    <label for="email" class="col-2">
+                                                        Email<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-10">
+                                                        <input type="email" class="form-control" name="email" id="email" />
+                                                    </div>
+                                                </div>
+                                                <div class="mt-3 row">
+                                                    <label for="password" class="col-2">
+                                                        Mật khẩu<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-10">
+                                                        <input type="password" class="form-control" name="password" id="password" />
+                                                    </div>
+                                                </div>
+                                                <div class="mt-3 row">
+                                                    <label for="avatar" class="col-2">
+                                                        Ảnh đại diện
+                                                    </label>
+                                                    <div class="col-10">
+                                                        <input type="file" class="form-control" name="avatar" id="avatar" />
+                                                    </div>
+                                                </div>
+                                                <div class="mt-3 row">
+                                                    <label for="gioi_tinh_nam" class="col-2">
+                                                        Giới tính
+                                                    </label>
+                                                    <div class="col-10 row">
+                                                        <div class="col-2">
+                                                            <input type="radio" class="form-check-input"
+                                                                name="gioi_tinh" id="gioi_tinh_nam" checked />
+                                                            <label class="form-check-label" for="gioi_tinh_nam">Nam</label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <input type="radio" class="form-check-input"
+                                                                name="gioi_tinh" id="gioi_tinh_nu" />
+                                                            <label class="form-check-label" for="gioi_tinh_nu">Nữ</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-3 row">
+                                                    <label for="" class="col-2">
+                                                        Chuyên ngành
+                                                    </label>
+                                                    <div class="col-10">
+                                                        <select class="form-select" name="chuyen_nganh" id="chuyen_nganh">
+                                                            <option selected disabled>Chọn chuyên ngành</option>
+                                                            <option value="udpm">Ứng dụng phần mềm</option>
+                                                            <option value="tktw">Thiết kế trang web</option>
+                                                            <option value="ltmt">Lập trình máy tính</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
 
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Đóng
+                                                </button>
+                                                <button type="button" class="btn btn-primary">Thêm mới</button>
+                                            </div>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                                Đóng
-                                            </button>
-                                            <button type="button" class="btn btn-primary">Thêm mới</button>
-                                        </div>
-                                    </div>
-                                </form>
+                                    </form>
+                                </div>
                             </div>
+                            <!-- End Modal Create -->
                         </div>
-                        <!-- End Modal Create -->
+
+                        <div class="col-6">
+                            <button class="col-3 btn btn-info" data-bs-toggle="collapse" data-bs-target="#tbl_sv">Mở rộng</button>
+                        </div>
+
                     </div>
                     <div class="row">
-                        <div class="table-responsive p-0">
+                        <div class="table-responsive p-0 collapse" id="tbl_sv">
                             <table class="table table-striped text-nowrap">
                                 <thead class="table-primary">
                                     <tr>
@@ -213,6 +254,35 @@
                                     </tr>
                                 </tbody>
                             </table>
+
+                            <div class="row">
+                                <div class="col-6">...</div>
+                                <div class="col-6">
+                                    <ul class="pagination">
+                                        <li class="page-item">
+                                            <a href="#" class="page-link"> Trang trước </a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link"> 1 </a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link"> 2 </a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link"> 3 </a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link"> ... </a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link"> 1000 </a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link"> Trang sau </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
