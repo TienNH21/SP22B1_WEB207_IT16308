@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT16308 - Demo Object</title>
+</head>
+<body ng-app="demo_object_app">
+    <div ng-controller="info_controller">
+        <ul>
+            <li>{{ info.ten }}</li>
+            <li ng-bind="info.ma"></li>
+            <li>{{ info.email }}</li>
+            <li>{{ info.sdt }}</li>
+            <li>{{ info.chuyen_nganh }}</li>
+        </ul>
+    </div>
+
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module("demo_object_app", []);
+        const showInfo = function ($scope) {
+            let info = {
+                ten: "Ng Van A",
+                ma: "PH12345",
+                email: "anvph12345@fpt.edu.vn",
+                sdt: "0912312312",
+                chuyen_nganh: "UDPM"
+            };
+
+            $scope.info = info;
+        }
+
+        app.controller("info_controller", showInfo);
+    </script>
+</body>
+</html>
