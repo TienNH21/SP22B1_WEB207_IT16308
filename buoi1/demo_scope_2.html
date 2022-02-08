@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT16308 - Demo $scope 2: Nesting $scope</title>
+</head>
+<body ng-app="demo_scope_2">
+    <!-- Parent -->
+    <div ng-controller="parent_controller" style="background-color: yellow;">
+        <p>Parent: {{ parent_msg }}</p>
+
+        <!-- Child 1 -->
+        <div ng-controller="my_controller1" style="height: 100px; background-color: aqua;">
+            <p>{{ msg_1 }}</p>
+
+            <!--
+                C1: truy xuất trực tiếp tới $scope cha, do vẫn nằm trong phạm vi của controller cha
+                ===> xét trực tiếp trên $scope cha
+            -->
+            <p>Parent 1: {{ parent_msg }}</p>
+
+            <!--
+                C2: Xét trên $scope child (con):
+                    sử dụng $parent để truy xuất tới $scope cha (parent_controller)
+            -->
+            <p>Parent 2: {{ $parent.parent_msg }}</p>
+        </div>
+
+        <!-- Child 2 -->
+        <div ng-controller="my_controller2" style="height: 100px; background-color: lightgreen;">
+            <p>{{ msg_2 }}</p>
+
+            <p>{{ root_msg }}</p>
+            <p>{{ $parent.$parent.root_msg }}</p>
+        </div>
+
+        <div ng-controller="diem_controller" ng-init="diem=10">
+            <p ng-show="diem >= 5">Bạn đã qua môn</p>
+            <p ng-hide="diem >= 5">Bạn chưa qua môn</p>
+        </div>
+    </div>
+
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module("demo_scope_2", []);
+        function parentController($scope) {
+            $scope.parent_msg = "Đây là message parent";
+        }
+
+        function myController1($scope) {
+            $scope.msg_1 = "Đây là message 1";
+        }
+
+        function myController2($scope, $rootScope) {
+            $scope.msg_2 = "Đây là message 2";
+            $rootScope.root_msg = "Đây là message root";
+        }
+
+        function diemController($scope) {
+        }
+
+        app.controller("diem_controller", diemController);
+        app.controller("parent_controller", parentController);
+        app.controller("my_controller1", myController1);
+        app.controller("my_controller2", myController2);
+    </script>
+</body>
+</html>
