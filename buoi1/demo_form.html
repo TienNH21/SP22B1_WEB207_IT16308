@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body ng-app="demo_form">
+    <div class="container">
+        <header class="row bg-danger" style="height: 200px;"></header>
+        <nav class="row navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">IT16308</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Giới thiệu</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Liên hệ</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Tài khoản
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
+                      <li><a class="dropdown-item" href="#">Đăng ký</a></li>
+                      <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+        <div class="row mt-3">
+            <aside class="col-sm-3 bg-info p-3">
+                <div>
+                    <!-- Kết hợp .list-group + .card https://getbootstrap.com/docs/5.1/components/card/#list-groups -->
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="https://www.nokia.com/">Nokia</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="https://www.nokia.com/">Samsung</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="https://www.nokia.com/">Apple</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="https://www.nokia.com/">Oppo</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="https://www.nokia.com/">BPhone</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <article class="col-sm-9 p-0 ps-3" ng-controller="form_controller">
+                <form action="" method="" name="form_sv">
+                    <div class="mt-3 row">
+                        <label for="fullname" class="col-2">
+                            Họ tên<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-10">
+                            <input
+                                ng-model="sv.fullname"
+                                ng-model-options="{ updateOn: 'default', debounce: 500 }"
+                                type="text"
+                                class="form-control"
+                                name="fullname"
+                                autocomplete="off"
+                                id="fullname"
+                                required />
+                            <small ng-hide="form_sv.fullname.$untouched || form_sv.fullname.$valid" class="text-danger">
+                                Không được để trống
+                            </small>
+                        </div>
+                    </div>
+                    <div class="mt-3 row">
+                        <label for="number" class="col-2">
+                            SĐT<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-10">
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="number"
+                                id="number" />
+                        </div>
+                    </div>
+                    <div class="mt-3 row">
+                        <label for="email" class="col-2">
+                            Email<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-10">
+                            <input
+                                type="email"
+                                class="form-control"
+                                name="email"
+                                id="email"
+                                ng-model="email"
+                                autocomplete="off"
+                                required />
+                            <span class="text-danger">
+                                <small ng-show="form_sv.fullname.$touched && form_sv.email.$error.required">Không được để trống</small>
+                                <small ng-show="form_sv.fullname.$touched && form_sv.email.$error.email">Không đúng định dạng</small>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mt-3 row">
+                        <label for="password" class="col-2">
+                            Mật khẩu<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-10">
+                            <input
+                                type="password"
+                                class="form-control"
+                                name="password"
+                                id="password"
+                                validate-password />
+                        </div>
+                    </div>
+                    <div class="mt-3 row">
+                        <label for="avatar" class="col-2">
+                            Ảnh đại diện
+                        </label>
+                        <div class="col-10">
+                            <input type="file" class="form-control" name="avatar" id="avatar" />
+                        </div>
+                    </div>
+                    <div class="mt-3 row">
+                        <label for="gioi_tinh_nam" class="col-2">
+                            Giới tính
+                        </label>
+                        <div class="col-10 row">
+                            <div class="col-2">
+                                <input type="radio" class="form-check-input"
+                                    ng-model="sv.gioi_tinh" value="1"
+                                    ng-checked="sv.gioi_tinh == 1"
+                                    name="gioi_tinh" id="gioi_tinh_nam" checked />
+                                <label class="form-check-label" for="gioi_tinh_nam">Nam</label>
+                            </div>
+                            <div class="col-2">
+                                <input type="radio" class="form-check-input"
+                                    ng-model="sv.gioi_tinh" value="0"
+                                    ng-checked="sv.gioi_tinh == 0"
+                                    name="gioi_tinh" id="gioi_tinh_nu" />
+                                <label class="form-check-label" for="gioi_tinh_nu">Nữ</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-3 row">
+                        <label for="" class="col-2">
+                            Chuyên ngành
+                        </label>
+                        <div class="col-10">
+                            <select
+                                ng-model="sv.chuyen_nganh"
+                                class="form-select"
+                                name="chuyen_nganh"
+                                id="chuyen_nganh">
+                                <option value="{{ nganh.ma }}" ng-repeat="nganh in ds_chuyen_nganh">
+                                    {{ nganh.ten }}
+                                </option>
+                            </select>
+                            <!-- <select
+                                ng-model="sv.chuyen_nganh"
+                                class="form-select"
+                                name="chuyen_nganh"
+                                ng-options="nganh.ten for nganh in ds_chuyen_nganh track by nganh.ma"
+                                id="chuyen_nganh">
+                            </select> -->
+                        </div>
+                    </div>
+                    <div class="mt-3 row">
+                        <button class="btn btn-primary col-2">Thêm mới</button>
+                        <button class="btn btn-danger ms-2 col-2" type="reset">Clear</button>
+                    </div>
+                </form>
+            </article>
+        </div>
+        <div class="row bg-secondary text-center p-2 mt-3">
+            <span>TienNH21</span>
+        </div>
+    </div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module("demo_form", []);
+        function formController($scope) {
+            $scope.sv = {
+                fullname: "",
+                email: "",
+                password: "",
+                avatar: null,
+                gioi_tinh: 1,
+                chuyen_nganh: "",
+            };
+
+            $scope.ds_chuyen_nganh = [
+                { ma: "udpm", ten: "Ứng dụng phần mềm" },
+                { ma: "tktw", ten: "Thiết kế trang web" },
+                { ma: "ltmt", ten: "Lập trình máy tính" },
+            ];
+        }
+
+        app.controller("form_controller", formController);
+
+        // Custom Validation
+        app.directive("validatePassword", function () {
+            return {
+                require: 'ngModel',
+                link: function (scope, element, attr, mCtrl) {
+                    function fnValidate(value) {
+                        if (value.length < 6) {
+                            mCtrl.$setValidity('charE', false);
+                        } else {
+                            mCtrl.$setValidity('charE', true);
+                        }
+
+                        return value;
+                    }
+
+                    mCtrl.$parsers.push(fnValidate);
+                }
+            };
+        });
+    </script>
+</body>
+</html>
