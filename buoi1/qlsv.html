@@ -30,7 +30,7 @@
             <div class="spinner-border text-primary spinner-center" role="status">
             </div>
         </div>
-        <form ng-submit=""
+        <form ng-submit="onFormSubmit($event)"
             action=""
             class="col-8 offset-2">
             <div class="form-group mt-3">
@@ -79,9 +79,9 @@
                         <td>
                             <button class="btn btn-danger"
                                 data-bs-toggle="modal"
-                                data-bs-target="#">Xóa</button>
+                                data-bs-target="#modal_delete_{{ sv.id }}">Xóa</button>
 
-                            <div class="modal fade" id=""
+                            <div class="modal fade" id="modal_delete_{{ sv.id }}"
                                 tabindex="-1" aria-hidden="true">
                                 <div class="modal-dialog modal-lg">
                                     <div class="modal-content">
@@ -97,7 +97,7 @@
                                             <button type="button" class="btn btn-secondary"
                                                 data-bs-dismiss="modal">Đóng</button>
                                             <button type="button"
-                                                ng-click=""
+                                                ng-click="onDelete( sv.id )"
                                                 class="btn btn-danger">Xóa</button>
                                         </div>
                                     </div>
@@ -109,21 +109,61 @@
             </table>
         </div>
     </div>
-    <script src="js/angularjs.min.js">
-    </script>
+    <script src="js/angularjs.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script>
         var app = angular.module("qlsv", []);
         app.controller("myctrl", function ($scope, $http) {
             // Khởi tạo
             $scope.students = [];
+            $scope.student = {
+                id: "",
+                name: "",
+                code: "",
+                chuyen_nganh: "",
+            };
             $scope.isLoading = false;
             const api = 'https://620b061fbeee430017f38481.mockapi.io/students';
 
+            $scope.isLoading = true;
+            $http.get(api) // Gửi 1 request dạng GET lên API
+                .then(function (response) {
+                    // Nhận phản hồi (response) từ API
+                    $scope.students = response.data;
+                    $scope.isLoading = false;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                    $scope.isLoading = false;
+                });
+
+            $scope.onFormSubmit = function (event) {
+                event.preventDefault();
+
+                // Gửi request dạng POST (có kèm data) tới API
+                $http.post(api, $scope.student)
+                    .then(function (response) {
+                        $scope.student.id = response.data.id;
+
+                        $scope.students.push($scope.student);
+                    });
+            }
+
+            $scope.onDelete = function(id) {
+                const deleteApi = api + "/" + id;
+                $http.delete(deleteApi)
+                    .then(function (response) {
+                        console.log("done");
+                        $("#modal_delete_" + id).modal('hide');
+                        // Xóa khỏi table
+                    })
+            }
+
         });
     </script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
