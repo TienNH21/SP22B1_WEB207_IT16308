@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT16308 - Demo Event</title>
+</head>
+<body ng-app="demo_event_app">
+    <div ng-controller="my_controller">
+        <button ng-click="onClick()">Click me</button>
+    </div>
+
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module("demo_event_app", []);
+        const myFunc = function ($scope) {
+            $scope.onClick = function () {
+                alert("Clicked");
+            }
+        }
+
+        app.controller("my_controller", myFunc);
+    </script>
+</body>
+</html>

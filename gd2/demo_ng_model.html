@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT16308 - Demo ng-model</title>
+</head>
+<body ng-app="demo_ng_model_app">
+    <div ng-controller="my_controller">
+        <h3>{{ message }}</h3>
+        <input type="text" ng-model="message" />
+    </div>
+
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module("demo_ng_model_app", []);
+
+        const myFunc = function ($scope) {
+            $scope.message = "Hello World";
+        }
+
+        app.controller("my_controller", myFunc);
+    </script>
+</body>
+</html>

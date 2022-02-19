@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT16308</title>
+</head>
+<body ng-app="demo_route">
+    <ul>
+        <li><a href="#blue">Blue</a></li>
+        <li><a href="#red">Red</a></li>
+        <li><a href="#green">Green</a></li>
+    </ul>
+
+    <div ng-view></div>
+    <script src="js/angularjs.min.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="controllers/BlueController.js"></script>
+    <script src="controllers/RedController.js"></script>
+    <script src="controllers/GreenController.js"></script>
+
+    <script>
+        const app = angular.module("demo_route", ["ngRoute"]);
+
+        app.config(function ($routeProvider, $locationProvider) {
+            $locationProvider.hashPrefix('');
+            $routeProvider
+                .when("/blue", {
+                    templateUrl: 'pages/blue.html',
+                    controller: 'blueController'
+                })
+                .when("/red", {
+                    templateUrl: 'pages/red.html',
+                    controller: 'redController'
+                })
+                .when("/green", {
+                    templateUrl: 'pages/green.html',
+                    controller: 'greenController'
+                })
+        });
+
+        app.controller("blueController", blueController);
+        app.controller("redController", redController);
+        app.controller("greenController", greenController);
+    </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                type="button" role="tab" aria-controls="home" aria-selected="true">Cập nhật</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                type="button" role="tab" aria-controls="profile" aria-selected="false">Danh sách</button>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <form action="" method="">
+                <div class="mt-3 row">
+                    <label for="fullname" class="col-2">
+                        Họ tên<span class="text-danger">*</span>
+                    </label>
+                    <div class="col-10">
+                        <input type="text" class="form-control" name="fullname" id="fullname" />
+                        <small class="text-danger">Không được để trống</small>
+                    </div>
+                </div>
+                <div class="mt-3 row">
+                    <label for="number" class="col-2">
+                        SĐT<span class="text-danger">*</span>
+                    </label>
+                    <div class="col-10">
+                        <input type="text" class="form-control" name="number" id="number" />
+                    </div>
+                </div>
+                <div class="mt-3 row">
+                    <label for="email" class="col-2">
+                        Email<span class="text-danger">*</span>
+                    </label>
+                    <div class="col-10">
+                        <input type="email" class="form-control" name="email" id="email" />
+                    </div>
+                </div>
+                <div class="mt-3 row">
+                    <label for="password" class="col-2">
+                        Mật khẩu<span class="text-danger">*</span>
+                    </label>
+                    <div class="col-10">
+                        <input type="password" class="form-control" name="password" id="password" />
+                    </div>
+                </div>
+                <div class="mt-3 row">
+                    <label for="avatar" class="col-2">
+                        Ảnh đại diện
+                    </label>
+                    <div class="col-10">
+                        <input type="file" class="form-control" name="avatar" id="avatar" />
+                    </div>
+                </div>
+                <div class="mt-3 row">
+                    <label for="gioi_tinh_nam" class="col-2">
+                        Giới tính
+                    </label>
+                    <div class="col-10 row">
+                        <div class="col-2">
+                            <input type="radio" class="form-check-input"
+                                name="gioi_tinh" id="gioi_tinh_nam" checked />
+                            <label class="form-check-label" for="gioi_tinh_nam">Nam</label>
+                        </div>
+                        <div class="col-2">
+                            <input type="radio" class="form-check-input"
+                                name="gioi_tinh" id="gioi_tinh_nu" />
+                            <label class="form-check-label" for="gioi_tinh_nu">Nữ</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3 row">
+                    <label for="" class="col-2">
+                        Chuyên ngành
+                    </label>
+                    <div class="col-10">
+                        <select class="form-select" name="chuyen_nganh" id="chuyen_nganh">
+                            <option selected disabled>Chọn chuyên ngành</option>
+                            <option value="udpm">Ứng dụng phần mềm</option>
+                            <option value="tktw">Thiết kế trang web</option>
+                            <option value="ltmt">Lập trình máy tính</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mt-3 row">
+                    <button class="btn btn-primary col-2">Thêm mới</button>
+                    <button class="btn btn-danger ms-2 col-2" type="reset">Clear</button>
+                </div>
+            </form>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="table-responsive p-0">
+                <table class="table table-striped text-nowrap">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>#</th>
+                            <th>Họ tên</th>
+                            <th>SĐT</th>
+                            <th>Email</th>
+                            <th>Địa chỉ</th>
+                            <th colspan="2">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Ng Van A</td>
+                            <td>0912312312</td>
+                            <td>ng_van_a@gmail.com</td>
+                            <td>1 Trinh Van Bo, Nam Tu Liem, Ha Noi</td>
+                            <td><button>Sửa</button></td>
+                            <td><button>Xóa</button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Ng Van A</td>
+                            <td>0912312312</td>
+                            <td>ng_van_a@gmail.com</td>
+                            <td>1 Trinh Van Bo, Nam Tu Liem, Ha Noi</td>
+                            <td><button>Sửa</button></td>
+                            <td><button>Xóa</button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Ng Van A</td>
+                            <td>0912312312</td>
+                            <td>ng_van_a@gmail.com</td>
+                            <td>1 Trinh Van Bo, Nam Tu Liem, Ha Noi</td>
+                            <td><button>Sửa</button></td>
+                            <td><button>Xóa</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

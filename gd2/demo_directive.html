@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT16308 - Demo Directive</title>
+</head>
+<body ng-app="demo_directive">
+    <div ng-controller="my_controller">
+        <ul>
+            <li>Họ tên: {{ sv.ten }}</li>
+            <li>
+                Chuyên ngành:
+                <span ng-switch="sv.chuyen_nganh">
+                    <span ng-switch-when="UDPM">Ứng dụng phần mềm</span>
+                    <span ng-switch-when="TKTW">Thiết kế trang web</span>
+                    <span ng-switch-when="LTMT">Lập trình máy tính</span>
+                    <span ng-switch-default>Không hợp lệ</span>
+                </span>
+            </li>
+
+            <li>Các môn đã học
+                <ul>
+                    <li ng-repeat="mon_hoc in sv.mon_da_hoc">
+                        {{ $index }} - {{ mon_hoc }}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module("demo_directive", []);
+
+        function myController($scope) {
+            $scope.sv = {
+                ten: "Ng Van A",
+                chuyen_nganh: "UDPM",
+                mon_da_hoc: [
+                    "Nhap mon lap trinh",
+                    "Lap trinh Java 1",
+                    "Lap trinh Java 2",
+                    "Lap trinh Java 3",
+                ],
+            };
+        }
+
+        app.controller("my_controller", myController);
+    </script>
+</body>
+</html>

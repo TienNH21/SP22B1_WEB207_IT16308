@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT16308 - Demo $scope 1: Multi $scope</title>
+</head>
+<body ng-app="demo_scope_1">
+    <div ng-controller="my_controller1" style="height: 100px; background-color: aqua;">
+        <p>{{ msg_1 }}</p>
+    </div>
+
+    <div ng-controller="my_controller2" style="height: 100px; background-color: lightgreen;">
+        <p>{{ msg_2 }}</p>
+    </div>
+
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module("demo_scope_1", []);
+
+        function myController1($scope) {
+            $scope.msg_1 = "Đây là message 1";
+        }
+
+        function myController2($scope) {
+            $scope.msg_2 = "Đây là message 2";
+        }
+
+        app.controller("my_controller1", myController1);
+        app.controller("my_controller2", myController2);
+    </script>
+</body>
+</html>

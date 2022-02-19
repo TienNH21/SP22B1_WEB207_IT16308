@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT16308 - Demo Filter</title>
+</head>
+<body ng-app="demo_filter">
+    <div ng-controller="my_controller" style="font-size: 30px;">
+        <!--
+            {{ gia_tri | number : so_chu_so_thap_phan }}
+            {{ gia_tri | currency : don_vi : so_chu_so_thap_phan }}
+        -->
+        <p>{{ my_number }}</p>
+        <p>{{ my_number | number : 3 }}</p>
+        <p>{{ my_number | currency : 'VND' : 2 }}</p>
+
+        <!--
+            {{ gia_tri | date : dinh_dang_ngay : time_zone }}
+        -->
+        <p>{{ now }}</p>
+        <p>{{ now | date : 'dd/MM/yyyy HH:mm:ss' : '+07' }}</p>
+
+        <p>{{ name | uppercase }}</p>
+        <p>{{ name | lowercase }}</p>
+
+        <p>{{ my_obj | json }}</p>
+
+        <!--
+            limitTo & orderBy giúp thao tác với mảng
+            limitTo: lấy ra 1 vài phần tử của mảng
+            orderBy: sắp xếp mảng
+
+            limitTo: {{ array | limitTo: so_phan_tu : vi_tri_start }}
+        -->
+        <ul>Trang 1
+            <li ng-repeat="item in arr | limitTo : 2 : 0">
+                {{ item.ten }}
+            </li>
+        </ul>
+        <ul>Trang 2
+            <li ng-repeat="item in arr | limitTo : 2 : 2">
+                {{ item.ten }}
+            </li>
+        </ul>
+        <ul>Trang 3
+            <li ng-repeat="item in arr | limitTo : 2 : 4">
+                {{ item.ten }}
+            </li>
+        </ul>
+
+        <hr>
+
+        <!--
+            orderBy: {{ array | orderBy: tieu_chi_sap_xep }}
+        -->
+        <ul>
+            <li ng-repeat="item in arr | orderBy : 'ma' ">
+                {{ item.ma }} - {{ item.ten }}
+            </li>
+        </ul>
+    </div>
+
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module("demo_filter", []);
+
+        function myController($scope, $http) {
+            $scope.my_number = 1234.56789;
+            $scope.now = new Date();
+            $scope.name = "Nguyen Van A";
+            $scope.my_obj = {
+                name: "Nguyen Van A",
+                gioi_tinh: 1,
+                ma_sv: "PH12345",
+            };
+
+            $scope.arr = [
+                { ma: "WEB207", ten: "Frontend Framework" },
+                { ma: "SOF2041", ten: "Dự án mẫu" },
+                { ma: "SOF203", ten: "Lập trình Java 3" },
+                { ma: "COM108", ten: "Nhập môn lập trình" },
+                { ma: "MOB1014", ten: "Lập trình Java 1" },
+                { ma: "MOB1023", ten: "Lập trình Java 2" },
+            ];
+
+            //
+        }
+
+        app.controller("my_controller", myController);
+    </script>
+</body>
+</html>

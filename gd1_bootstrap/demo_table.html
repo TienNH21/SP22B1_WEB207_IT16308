@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container">
+        <header class="row">
+            <div id="carouselExampleControls" class="carousel slide p-0" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img (23).webp" class="d-block w-100">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img (22).webp" class="d-block w-100">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img (15).webp" class="d-block w-100">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button"
+                    data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button"
+                    data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </header>
+        <nav class="row navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">IT16308</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Giới thiệu</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Liên hệ</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Tài khoản
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
+                      <li><a class="dropdown-item" href="#">Đăng ký</a></li>
+                      <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+        <div class="row mt-3">
+            <aside class="col-sm-3 bg-info p-3">
+                <div>
+                    <!-- Kết hợp .list-group + .card https://getbootstrap.com/docs/5.1/components/card/#list-groups -->
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="https://www.nokia.com/">
+                                Nokia
+                                <span
+                                    data-bs-toggle="tooltip"
+                                    data-bs-placement="top"
+                                    title="Giảm 99%"
+                                    class="badge bg-danger">Khuyến mãi</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="https://www.nokia.com/">Samsung</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="https://www.nokia.com/">Apple</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="https://www.nokia.com/">Oppo</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="https://www.nokia.com/">BPhone</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <article class="col-sm-9 p-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="col-4 btn btn-success"
+                                data-bs-toggle="modal" data-bs-target="#modal_create">
+                                Thêm mới
+                            </button>
+
+                            <!-- Modal Create -->
+                            <div class="modal fade" id="modal_create" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <form action="" method="">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                    Thêm mới sinh viên
+                                                </h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="alert alert-success">
+                                                    Thêm mới thành công
+                                                </div>
+                                                <div class="mt-3 row">
+                                                    <label for="fullname" class="col-2">
+                                                        Họ tên<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-10">
+                                                        <input type="text" class="form-control" name="fullname" id="fullname" />
+                                                        <small class="text-danger">Không được để trống</small>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-3 row">
+                                                    <label for="number" class="col-2">
+                                                        SĐT<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-10">
+                                                        <input type="text" class="form-control" name="number" id="number" />
+                                                    </div>
+                                                </div>
+                                                <div class="mt-3 row">
+                                                    <label for="email" class="col-2">
+                                                        Email<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-10">
+                                                        <input type="email" class="form-control" name="email" id="email" />
+                                                    </div>
+                                                </div>
+                                                <div class="mt-3 row">
+                                                    <label for="password" class="col-2">
+                                                        Mật khẩu<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-10">
+                                                        <input type="password" class="form-control" name="password" id="password" />
+                                                    </div>
+                                                </div>
+                                                <div class="mt-3 row">
+                                                    <label for="avatar" class="col-2">
+                                                        Ảnh đại diện
+                                                    </label>
+                                                    <div class="col-10">
+                                                        <input type="file" class="form-control" name="avatar" id="avatar" />
+                                                    </div>
+                                                </div>
+                                                <div class="mt-3 row">
+                                                    <label for="gioi_tinh_nam" class="col-2">
+                                                        Giới tính
+                                                    </label>
+                                                    <div class="col-10 row">
+                                                        <div class="col-2">
+                                                            <input type="radio" class="form-check-input"
+                                                                name="gioi_tinh" id="gioi_tinh_nam" checked />
+                                                            <label class="form-check-label" for="gioi_tinh_nam">Nam</label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <input type="radio" class="form-check-input"
+                                                                name="gioi_tinh" id="gioi_tinh_nu" />
+                                                            <label class="form-check-label" for="gioi_tinh_nu">Nữ</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-3 row">
+                                                    <label for="" class="col-2">
+                                                        Chuyên ngành
+                                                    </label>
+                                                    <div class="col-10">
+                                                        <select class="form-select" name="chuyen_nganh" id="chuyen_nganh">
+                                                            <option selected disabled>Chọn chuyên ngành</option>
+                                                            <option value="udpm">Ứng dụng phần mềm</option>
+                                                            <option value="tktw">Thiết kế trang web</option>
+                                                            <option value="ltmt">Lập trình máy tính</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Đóng
+                                                </button>
+                                                <button type="button" class="btn btn-primary">Thêm mới</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- End Modal Create -->
+                        </div>
+
+                        <div class="col-6">
+                            <button class="col-3 btn btn-info" data-bs-toggle="collapse" data-bs-target="#tbl_sv">Mở rộng</button>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="table-responsive p-0 collapse" id="tbl_sv">
+                            <table class="table table-striped text-nowrap">
+                                <thead class="table-primary">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Họ tên</th>
+                                        <th>SĐT</th>
+                                        <th>Email</th>
+                                        <th>Địa chỉ</th>
+                                        <th colspan="2">Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Ng Van A</td>
+                                        <td>0912312312</td>
+                                        <td>ng_van_a@gmail.com</td>
+                                        <td>1 Trinh Van Bo, Nam Tu Liem, Ha Noi</td>
+                                        <td><button class="btn btn-primary">Sửa</button></td>
+                                        <td><button class="btn btn-danger">Xóa</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Ng Van A</td>
+                                        <td>0912312312</td>
+                                        <td>ng_van_a@gmail.com</td>
+                                        <td>1 Trinh Van Bo, Nam Tu Liem, Ha Noi</td>
+                                        <td><button>Sửa</button></td>
+                                        <td><button>Xóa</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Ng Van A</td>
+                                        <td>0912312312</td>
+                                        <td>ng_van_a@gmail.com</td>
+                                        <td>1 Trinh Van Bo, Nam Tu Liem, Ha Noi</td>
+                                        <td><button>Sửa</button></td>
+                                        <td><button>Xóa</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="row">
+                                <div class="col-6">...</div>
+                                <div class="col-6">
+                                    <ul class="pagination">
+                                        <li class="page-item">
+                                            <a href="#" class="page-link"> Trang trước </a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link"> 1 </a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link"> 2 </a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link"> 3 </a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link"> ... </a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link"> 1000 </a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link"> Trang sau </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="row bg-secondary text-center p-2 mt-3">
+            <span>TienNH21</span>
+        </div>
+    </div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
